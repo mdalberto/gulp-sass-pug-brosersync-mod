@@ -1,5 +1,3 @@
-function test(a, b) {
-  return a * b
+function alert () {
+  alert("Hello! I am an alert box!!");
 }
-
-console.log(test(2*3));
