@@ -1,0 +1,19 @@
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+button.accordion, button.accordion.active, button.accordion:hover
+    background-color: transparent;
+    border-bottom: 2px solid $gray;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    
+button.accordion .btn-default
+  background-color: $gray;
+  margin-bottom: 0px;
+  border-radius: 0;
+  border-bottom: none;
+
+/* Style the accordion panel. Note: hidden by default */
+div.panel 
+    padding: 20px 18px 0 18px;
+    background-color: $gray;
+    display: none;
+    border-radius: 0;

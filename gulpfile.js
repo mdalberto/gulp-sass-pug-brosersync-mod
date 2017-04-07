@@ -10,15 +10,18 @@ const reload = browserSync.reload;
 
 // Compile sass files to css
 gulp.task('sass', function () {
-  return gulp.src('./assests/css/*.sass')
+  return gulp.src('./assests/style/*.sass')
       .pipe(sass().on('error', sass.logError))
       .pipe(autoprefixer({
         browser: ['last 15 versions'],
         cascade: false
       }))
-      .pipe(gulp.dest('./site/css'))
+      .pipe(gulp.dest('./site/style'))
       .pipe(browserSync.reload({stream:true}))
 });
+
+
+
 
 // Compile pug files to html
 gulp.task('pug', () =>{
@@ -34,8 +37,20 @@ gulp.task('js', function () {
   .pipe(gulp.dest("./site"));
 });
 
+// pipe the images to the dest folder
+gulp.task('img', function () {
+  gulp.src("./assests/img/*")
+  .pipe(gulp.dest("./site/img"));
+});
+
+// pipe the fonts to the dest folder
+gulp.task('img', function () {
+  gulp.src("./assests/fonts/*")
+  .pipe(gulp.dest("./site/fonts"));
+});
+
 // the working directory
-gulp.task('browser-sync', ['sass', 'pug', 'js'] ,function() {
+gulp.task('browser-sync', ['sass', 'pug', 'img', 'js'] ,function() {
     browserSync.init({
         server: {
             baseDir: "./site"
@@ -47,11 +62,12 @@ gulp.task('browser-sync', ['sass', 'pug', 'js'] ,function() {
 
 // Watch files comiling
 gulp.task('watch', function () {
-  gulp.watch('./assests/css/*.sass', ['sass']);
+  gulp.watch('./assests/style/*.sass', ['sass']);
   gulp.watch('./_pugfiles/*.pug', ['pug']);
   gulp.watch('./site/*.html').on('change', reload);
   gulp.watch('./assests/js/*.js', ['js']);
   gulp.watch('./site/js/*.js').on('change', reload)
+  gulp.watch('./site/img/*').on('change', reload)
 });
 
 

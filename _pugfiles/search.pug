@@ -1,0 +1,67 @@
+extends layout.pug
+block content
+            
+  .search
+    button.accordion.text-center
+      h4.btn.btn-default
+        i.fa.fa-search
+        | &nbsp;Find Customer
+    .panel
+      .container
+        form(action='/', class="form-horizontal")
+          .row
+            .col-sm-6
+              .form-group.row
+                label.col-sm-6.col-md-4.col-lg-4.col-form-label(for='example-select') Brand Search
+                .col-sm-6.col-md-4
+                  select#example-select.form-control.select-picker
+                    option All Brands
+                    option Psychic Source
+                    option Hollywood Psychics
+                    option Gaylive Network
+              .form-group.row
+                label.col-sm-6.col-md-4.col-lg-4.col-form-label(for='example-text-input') Membership ID
+                .col-sm-5
+                  input#example-text-input.form-control(type='text', value='')
+              .form-group.row
+                label.col-sm-6.col-md-4.col-lg-4.col-form-label(for='firstname-input') First Name
+                .col-sm-5
+                  input#firstname-input.form-control(type='text', value='')
+              .form-group.row
+                label.col-sm-6.col-md-4.col-lg-4.col-form-label(for='lastname-input') Last Name
+                .col-sm-5
+                  input#lastname-input.form-control(type='text', value='')
+              .form-group.row
+                label.col-sm-6.col-md-4.col-lg-4.col-form-label(for='username-input') User Name
+                .col-sm-5
+                  input#lastname-input.form-control(type='text', value='')  
+              .form-group.row
+                label.col-sm-6.col-md-4.col-lg-4.col-form-label(for='example-select2') Gender
+                .col-sm-6.col-md-3
+                  select#example-select2.form-control.select-picker
+                    option Female
+                    option Male 
+            .col-sm-6
+              .form-group.row
+                label.col-sm-6.col-md-4.col-lg-4.col-form-label(for='web-password-input') Web Password
+                .col-sm-5
+                  input#web-password-input.form-control(type='text', value='')  
+              .form-group.row
+                label.col-sm-6.col-md-4.col-lg-4.col-form-label(for='example-tel-input') Phone
+                .col-sm-5
+                  input#example-tel-input.form-control(type='tel', value='')
+              .form-group.row
+                label.col-sm-6.col-md-4.col-lg-4.col-form-label(for='example-email-input') Email
+                .col-sm-5
+                  input#example-email-input.form-control(type='email', value='')
+              .form-group.row
+                label.col-sm-6.col-md-4.col-lg-4.col-form-label(for='example-date-input') Birth Date
+                .col-sm-5
+                  input#example-date-input.form-control(type='date', value='2011-08-19')        
+        .row
+          .col-xs-12  
+            p.login.button
+              input(type='Search', value='Search', class='btn btn-default')
+              input(type='Clear', value='Clear', class='btn btn-default u-mar-l-10')
+              input(type='Close', value='Close', class='btn btn-default u-mar-l-10')
+              
